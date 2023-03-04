@@ -6,6 +6,7 @@
 #include <dt-bindings/zmk/bt.h>
 #define HOST_OS 1  // set to 1 for Linux, default is 0 (Windows)
 #include "../zmk-nodefree-config/helper.h"
+#include "../zmk-nodefree-config/international_chars/german.dtsi"
 
 // Home row mods macro
 #define HRML(k1,k2,k3,k4) &ht LGUI k1  &ht LALT k2  &ht LCTRL k3  &ht LSHFT k4
