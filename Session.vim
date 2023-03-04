@@ -13,14 +13,12 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +123 config/cradio.keymap
-badd +2 german.dtsi
+badd +8 config/cradio.keymap
 argglobal
 %argdel
 $argadd config/cradio.keymap
 edit config/cradio.keymap
 argglobal
-balt german.dtsi
 setlocal fdm=indent
 setlocal fde=nvim_treesitter#foldexpr()
 setlocal fmr={{{,}}}
@@ -31,107 +29,17 @@ setlocal fdn=20
 setlocal fen
 19
 normal! zo
-33
-normal! zo
-42
-normal! zo
 50
 normal! zo
-63
+137
 normal! zo
-63
+137
 normal! zo
-63
-normal! zo
-63
-normal! zo
-63
-normal! zo
-63
-normal! zo
-63
-normal! zo
-63
-normal! zo
-63
-normal! zo
-80
-normal! zo
-80
-normal! zo
-80
-normal! zo
-80
-normal! zo
-80
-normal! zo
-80
-normal! zo
-80
-normal! zo
-80
-normal! zo
-80
-normal! zo
-96
-normal! zo
-96
-normal! zo
-96
-normal! zo
-96
-normal! zo
-96
-normal! zo
-96
-normal! zo
-96
-normal! zo
-96
-normal! zo
-96
-normal! zo
-114
-normal! zo
-114
-normal! zo
-114
-normal! zo
-114
-normal! zo
-114
-normal! zo
-114
-normal! zo
-114
-normal! zo
-114
-normal! zo
-114
-normal! zo
-131
-normal! zo
-131
-normal! zo
-131
-normal! zo
-131
-normal! zo
-131
-normal! zo
-131
-normal! zo
-131
-normal! zo
-131
-normal! zo
-131
-normal! zo
-let s:l = 1 - ((0 * winheight(0) + 26) / 52)
+let s:l = 8 - ((7 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
+keepjumps 8
 normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
