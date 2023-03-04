@@ -84,11 +84,12 @@
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
+
         right_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ INSERT   │  1       │  2       │  3       │          │   │ HOME     │ PAGE DN  │ PAGE UP  │ END      │  :       │
-            &kp AT    &kp UNDER  &kp LBRC   &kp RBRC   &kb CARET      &kp EXCL   &kp LT     &kp RT     &kp EQUAL  &kp AMPS
+            &kp AT    &kp UNDER  &kp LBRC   &kp RBRC   &kb CARET      &kp EXCL   &kp LT     &kp GT     &kp EQUAL  &kp AMPS
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ DELETE   │  4       │  5       │  6       │          │   │ LEFT     │ DOWN     │ UP       │ RIGHT    │  ;       │
             &kp BSLH  &kp FSLH   &kp LBKT   &kp RBKT   &kb STAR       &kp QMARK  &kp LPAR   &kp RPAR   &kp MINUS  &kp GRAVE
