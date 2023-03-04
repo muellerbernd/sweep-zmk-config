@@ -91,13 +91,13 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ INSERT   │  1       │  2       │  3       │          │   │ HOME     │ PAGE DN  │ PAGE UP  │ END      │  :       │
-            &kp DE_AT    &kp DE_UNDS  &kp DE_LCBR   &kp DE_RCBR   &kp DE_CIRC      &kp DE_EXLM   &kp DE_LABK     &kp DE_RABK     &kp DE_EQL  &kp DE_AMPR
+            &kp DE_AT &kp DE_UNDS  &kp DE_LCBR   &kp DE_RCBR   &kp DE_CIRC      &kp DE_EXLM   &kp DE_LABK     &kp DE_RABK     &kp DE_EQL  &kp DE_AMPR
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ DELETE   │  4       │  5       │  6       │          │   │ LEFT     │ DOWN     │ UP       │ RIGHT    │  ;       │
             &kp DE_BSLS  &kp DE_SLSH   &kp DE_LBRC   &kp DE_RBRC   &kp DE_ASTR       &kp DE_QUES  &kp DE_LPRN   &kp DE_RPRN   &kp DE_MINS  &kp DE_ACUT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ CAPS     │  7       │  8       │  9       │  0       │   │          │          │          │          │          │
-           &kp DE_HASH   &kp DE_TILD  &kp DE_PIPE   &kp DE_DLR &kp DE_EURO       &kp DE_PLUS   &kp DE_PERC  &kp DE_QUO    &kp DE_QUOT    &kp DE_GRV
+           &kp DE_HASH   &kp DE_TILD  &kp DE_PIPE   &kp DE_DLR &kp DE_EURO       &kp DE_PLUS   &kp DE_PERC  &kp DE_DQUO    &kp DE_QUOT    &kp DE_GRV
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                             &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯

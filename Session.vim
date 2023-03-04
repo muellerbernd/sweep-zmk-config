@@ -13,9 +13,8 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +85 config/cradio.keymap
-badd +1 zmk-nodefree-config/international_chars/german.dtsi
-badd +71 config/german-keymap.h
+badd +100 config/cradio.keymap
+badd +42 config/german-keymap.h
 argglobal
 %argdel
 $argadd config/cradio.keymap
@@ -54,11 +53,11 @@ normal! zo
 normal! zo
 68
 normal! zo
-let s:l = 80 - ((23 * winheight(0) + 25) / 50)
+let s:l = 1 - ((0 * winheight(0) + 25) / 50)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 80
+keepjumps 1
 normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
