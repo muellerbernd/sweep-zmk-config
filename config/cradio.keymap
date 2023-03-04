@@ -18,6 +18,12 @@
 #define EUR (EURO)
 /* ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C) */
 
+#define DEFAULT 0
+#define LOWER   1
+#define RAISE   2
+#define ADJUST  3
+#define NAV     4
+
 / {
     behaviors {
         ht: hold_tap {
@@ -44,8 +50,8 @@
     conditional_layers {
         compatible = "zmk,conditional-layers";
         tri_layer {
-            if-layers = <1 2>;
-            then-layer = <3>;
+            if-layers = <LEFT RIGHT>;
+            then-layer = <ADJUST>;
         };
     };
 
@@ -54,7 +60,7 @@
         default_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
+        //│  Q       │  W       │  F       │  P       │  B       │   │  J       │  L       │  U       │ Z       │  P       │
             &kp Q      &kp W      &kp F      &kp P      &kp B          &kp J      &kp L      &kp U      &kp Y      &kp PLUS
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │
@@ -63,7 +69,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
             &kp Z      &kp X      &kp C      &kp D      &kp V          &kp K      &kp H      &kp COMMA  &kp DOT    &kp MINUS
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &lt 2 DEL  &lt 4 SPC      &kp BSPC   &lt 1 RET
+                                            &lt LEFT DEL  &lt NAV SPC &kp BSPC   &lt RIGHT RET
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -138,3 +144,5 @@
         };
     };
 };
+
+/* vim: set ft=cpp tw=174: */
