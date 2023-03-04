@@ -37,7 +37,7 @@
         combo_ss {
             timeout-ms = <50>;
             key-positions = <13 28>;
-            bindings = <de_eszett>;
+            bindings = <&de_eszett>;
         };
     };
 
