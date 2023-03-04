@@ -89,10 +89,10 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ INSERT   │  1       │  2       │  3       │          │   │ HOME     │ PAGE DN  │ PAGE UP  │ END      │  :       │
-            &kp AT    &kp UNDER  &kp LBRC   &kp RBRC   &kb CARET      &kp EXCL   &kp LT     &kp GT     &kp EQUAL  &kp AMPS
+            &kp AT    &kp UNDER  &kp LBRC   &kp RBRC   &kp CARET      &kp EXCL   &kp LT     &kp GT     &kp EQUAL  &kp AMPS
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ DELETE   │  4       │  5       │  6       │          │   │ LEFT     │ DOWN     │ UP       │ RIGHT    │  ;       │
-            &kp BSLH  &kp FSLH   &kp LBKT   &kp RBKT   &kb STAR       &kp QMARK  &kp LPAR   &kp RPAR   &kp MINUS  &kp GRAVE
+            &kp BSLH  &kp FSLH   &kp LBKT   &kp RBKT   &kp STAR       &kp QMARK  &kp LPAR   &kp RPAR   &kp MINUS  &kp GRAVE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ CAPS     │  7       │  8       │  9       │  0       │   │          │          │          │          │          │
            &kp HASH   &kp TILDE  &kp PIPE   &kp DOLLAR &kp EURO       &kp PLUS   &kp PRCNT  &kp DQT    &kp SQT    &kp GRAVE
@@ -107,10 +107,10 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬────────────┬────────────┬────────────┬──────────╮
         //│ RESET    │          │          │          │PROFILE 0 │   │          │            │            │            │  RESET   │
-           &reset     &trans     &trans     &trans    &bt BT_SEL 0    &kb K_APP  &kb C_PREV   &kp C_VOL_UP &kb C_NEXT   &kb C_PP
+           &reset     &trans     &trans     &trans    &bt BT_SEL 0    &kp K_APP  &kp C_PREV   &kp C_VOL_UP &kp C_NEXT   &kp C_PP
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼────────────┼────────────┼────────────┼──────────┤
         //│BOOTLOADER│          │          │          │PROFILE 1 │   │          │            │            │            │BOOTLOADER│
-          &bootloader &trans     &trans     &trans    &bt BT_SEL 1    &trans     &kp C_BRI_DN &kb C_VOL_DN &kb C_BRI_UP &kb C_MUTE
+          &bootloader &trans     &trans     &trans    &bt BT_SEL 1    &trans     &kp C_BRI_DN &kp C_VOL_DN &kp C_BRI_UP &kp C_MUTE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼────────────┼────────────┼────────────┼──────────┤
         //│          │          │          │ CLEAR BT │PROFILE 2 │   │          │            │            │            │          │
            &caps_word &trans     &trans    &bt BT_CLR &bt BT_SEL 2    &trans     &trans       &trans       &trans       &caps_word
@@ -124,13 +124,13 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭─────────────┬──────────┬──────────┬──────────┬─────────────╮
         //│ RESET    │          │          │          │PROFILE 0 │   │             │          │          │          │  RESET      │
-           &kb ESC    &trans     &trans     &trans     &trans         &kb LC(PG_DN) &kb PG_UP  &kb UP     &kb PG_DN  &kb LC(PG_UP)
+           &kp ESC    &trans     &trans     &trans     &trans         &kp LC(PG_DN) &kp PG_UP  &kp UP     &kp PG_DN  &kp LC(PG_UP)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├─────────────┼──────────┼──────────┼──────────┼─────────────┤
         //│BOOTLOADER│          │          │          │PROFILE 1 │   │             │          │          │          │   BOOTLOADER│
-           &kb TAB    &trans     &trans     &trans     &trans         &kb HOME      &kb LEFT   &kb DOWN   &kb RIGHT  &kb END
+           &kp TAB    &trans     &trans     &trans     &trans         &kp HOME      &kp LEFT   &kp DOWN   &kp RIGHT  &kp END
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├─────────────┼──────────┼──────────┼──────────┼─────────────┤
         //│          │          │          │ CLEAR BT │PROFILE 2 │   │             │          │          │          │             │
-          &kb LS(TAB) &trans     &trans     &trans     &trans         &trans        &trans     &trans     &trans     &trans
+          &kp LS(TAB) &trans     &trans     &trans     &trans         &trans        &trans     &trans     &trans     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├─────────────┼──────────┼──────────┴──────────┴─────────────╯
                                              &trans     &trans         &trans       &trans
         //                                 ╰──────────┴──────────╯   ╰─────────────┴──────────╯
