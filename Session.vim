@@ -13,15 +13,15 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +1 config/cradio.keymap
-badd +42 config/german-keymap.h
+badd +59 config/cradio.keymap
+badd +74 config/german-keymap.h
 badd +19 build.yaml
 argglobal
 %argdel
 $argadd config/cradio.keymap
 edit config/cradio.keymap
 argglobal
-balt build.yaml
+balt config/german-keymap.h
 setlocal fdm=indent
 setlocal fde=nvim_treesitter#foldexpr()
 setlocal fmr={{{,}}}

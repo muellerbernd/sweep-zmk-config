@@ -56,7 +56,7 @@
         default_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  Q       │  W       │  F       │  P       │  B       │   │  J       │  L       │  U       │ Z        │  P       │
+        //│  Q       │  W       │  F       │  P       │  B       │   │  J       │  L       │  U       │ Y        │  P       │
             &kp DE_Q  &kp DE_W      &kp DE_F      &kp DE_P      &kp DE_B          &kp DE_J      &kp DE_L      &kp DE_U      &kp DE_Y      &kp DE_PLUS
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │
@@ -74,13 +74,13 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │  [       │  {       │  }       │          │   │  ^       │  (       │  )       │  ]       │  ~       │
-           &kp F9     &kp F10    &kp F11    &kp F12    &kp DE_AE         &kp DE_COLN  &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp DE_DOT
+           &kp F9     &kp F10    &kp F11    &kp F12    &kp DE_AE         &kp DE_COLN  &kp N7  &kp N8  &kp N9  &kp DE_DOT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  !       │  @       │  #       │  $       │  %       │   │  *       │  -       │  =       │  \       │  `       │
-            &kp F5    &kp F6     &kp F7     &kp F8     &kp DE_UE         &kp DE_SCLN   &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp DE_COMM
+            &kp F5    &kp F6     &kp F7     &kp F8     &kp DE_UE         &kp DE_SCLN   &kp N4  &kp N5  &kp N6  &kp DE_COMM
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │  &       │  _       │  +       │  │       │          │
-            &kp F1    &kp F2     &kp F3     &kp F4     &kp DE_OE         &kp KP_N0  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp DE_PLUS
+            &kp F1    &kp F2     &kp F3     &kp F4     &kp DE_OE         &kp N0  &kp N1  &kp N2  &kp N3  &kp DE_PLUS
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                             &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -126,7 +126,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭─────────────┬──────────┬──────────┬──────────┬─────────────╮
         //│ RESET    │          │          │          │PROFILE 0 │   │             │          │          │          │  RESET      │
-           &kp ESC    &trans     &trans     &trans     &trans         &kp LC(PG_DN) &kp PG_UP  &kp UP     &kp PG_DN  &kp LC(PG_UP)
+           &kp ESC    &trans     &trans     &trans     &trans         &kp LC(PG_UP) &kp PG_UP  &kp UP     &kp PG_DN  &kp LC(PG_DN)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├─────────────┼──────────┼──────────┼──────────┼─────────────┤
         //│BOOTLOADER│          │          │          │PROFILE 1 │   │             │          │          │          │   BOOTLOADER│
            &kp TAB    &trans     &trans     &trans     &trans         &kp HOME      &kp LEFT   &kp DOWN   &kp RIGHT  &kp END
