@@ -37,3 +37,8 @@ Some additional Python dependencies are listed in Zephyr's scripts/requirements.
 ```bash
 pip3 install --user -r zephyr/scripts/requirements.txt
 ```
+
+# use mouse (info)
+- https://github.com/manna-harbour/miryoku_zmk/blob/b0fd7042e2c3a4c42ee5c4ea1a6c78b72ba0a196/miryoku/miryoku_kludge_mousekeyspr.h
+- https://github.com/ftc/zmk/tree/mouse-ftc
+- https://github.com/manna-harbour/miryoku_zmk/tree/master#mouse-keys

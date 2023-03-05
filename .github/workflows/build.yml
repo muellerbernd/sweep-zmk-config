@@ -1,10 +1,7 @@
-# on: [push, pull_request, workflow_dispatch]
-#
-# jobs:
-#   build:
-#     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
 on: [push, pull_request, workflow_dispatch]
 
 jobs:
   build:
-    uses: urob/zmk/.github/workflows/build-user-config.yml@build-with-submodules
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+    # with:
+      # branches: '["zmkfirmware/zmk/main ftc/zmk/mouse-ftc"]'
