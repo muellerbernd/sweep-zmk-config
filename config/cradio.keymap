@@ -6,19 +6,29 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #define HOST_OS 1  // set to 1 for Linux, default is 0 (Windows)
-#include "../zmk-nodefree-config/helper.h"
-// #include "../zmk-nodefree-config/international_chars/german.dtsi"
+#include "../helpers/keymap-helpers.h"
+#include "mouse.dtsi"
 
 // Home row mods macro
 #define HRML(k1,k2,k3,k4) &ht LGUI k1  &ht LALT k2  &ht LCTRL k3  &ht LSHFT k4
-#define HRMR(k1,k2,k3,k4) &ht RSHFT k1  &ht RCTRL k2  &ht RALT k3  &ht RGUI k4
+#define HRMR(k1,k2,k3,k4) &ht RSHFT k1  &ht RCTRL k2  &ht LALT k3  &ht RGUI k4
 
-
+// layer names
 #define DEFAULT 0
 #define LOWER   1
 #define RAISE   2
 #define ADJUST  3
 #define NAV     4
+
+// custom keys
+#define TABU LC(PG_DN)
+#define TABD LC(PG_UP)
+
+// SETTINGS
+#define TAPPING_TERM 200
+#define COMBO_FAST_MS    30
+#define COMBO_SLOW_MS    80
+#define COMBO_GQT_MS     80
 
 / {
     behaviors {
@@ -74,13 +84,13 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │  [       │  {       │  }       │          │   │  ^       │  (       │  )       │  ]       │  ~       │
-           &kp F9     &kp F10    &kp F11    &kp F12    &kp DE_AE         &kp DE_COLN  &kp N7  &kp N8  &kp N9  &kp DE_DOT
+           &kp F9     &kp F10    &kp F11    &kp F12    &kp DE_AE      &kp DE_COLN  &kp N7  &kp N8  &kp N9  &kp DE_DOT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  !       │  @       │  #       │  $       │  %       │   │  *       │  -       │  =       │  \       │  `       │
-            &kp F5    &kp F6     &kp F7     &kp F8     &kp DE_UE         &kp DE_SCLN   &kp N4  &kp N5  &kp N6  &kp DE_COMM
+            &kp F5    &kp F6     &kp F7     &kp F8     &kp DE_UE      &kp DE_SCLN  &kp N4  &kp N5  &kp N6  &kp DE_COMM
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │  &       │  _       │  +       │  │       │          │
-            &kp F1    &kp F2     &kp F3     &kp F4     &kp DE_OE         &kp N0  &kp N1  &kp N2  &kp N3  &kp DE_PLUS
+            &kp F1    &kp F2     &kp F3     &kp F4     &kp DE_OE      &kp N0     &kp N1  &kp N2  &kp N3  &kp DE_PLUS
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                             &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -115,7 +125,7 @@
           &bootloader &trans     &trans     &trans    &bt BT_SEL 1    &trans     &kp C_BRI_DN &kp C_VOL_DN &kp C_BRI_UP &kp C_MUTE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼────────────┼────────────┼────────────┼──────────┤
         //│          │          │          │ CLEAR BT │PROFILE 2 │   │          │            │            │            │          │
-           &caps_word &trans     &trans    &bt BT_CLR &bt BT_SEL 2    &trans     &trans       &trans       &trans       &caps_word
+           &kp CAPS   &trans     &trans    &bt BT_CLR &bt BT_SEL 2    &trans     &trans       &trans       &trans       &kp CAPS
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼────────────┼────────────┴────────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -126,13 +136,13 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭─────────────┬──────────┬──────────┬──────────┬─────────────╮
         //│ RESET    │          │          │          │PROFILE 0 │   │             │          │          │          │  RESET      │
-           &kp ESC    &trans     &trans     &trans     &trans         &kp LC(PG_UP) &kp PG_UP  &kp UP     &kp PG_DN  &kp LC(PG_DN)
+           &kp ESC    &kp U_BTN2 &kp U_MS_U &kp U_BTN1 &kp U_WH_U     &kp TABD      &kp PG_UP  &kp UP     &kp PG_DN  &kp TABU
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├─────────────┼──────────┼──────────┼──────────┼─────────────┤
         //│BOOTLOADER│          │          │          │PROFILE 1 │   │             │          │          │          │   BOOTLOADER│
-           &kp TAB    &trans     &trans     &trans     &trans         &kp HOME      &kp LEFT   &kp DOWN   &kp RIGHT  &kp END
+           &kp TAB    &kp U_MS_L &kp U_MS_D &kp U_MS_R &kp U_WH_U     &kp HOME      &kp LEFT   &kp DOWN   &kp RIGHT  &kp END
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├─────────────┼──────────┼──────────┼──────────┼─────────────┤
         //│          │          │          │ CLEAR BT │PROFILE 2 │   │             │          │          │          │             │
-          &kp LS(TAB) &trans     &trans     &trans     &trans         &trans        &trans     &trans     &trans     &trans
+          &kp LS(TAB) &kp U_BTN2 &kp U_BTN3 &kp U_BTN1 &trans         &trans        &trans     &trans     &trans     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├─────────────┼──────────┼──────────┴──────────┴─────────────╯
                                              &trans     &trans         &trans       &trans
         //                                 ╰──────────┴──────────╯   ╰─────────────┴──────────╯
