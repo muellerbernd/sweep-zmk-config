@@ -3,7 +3,7 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/Desktop/GithubProjects/my-mechanical-keyboard-journey/sweep-zmk-config
+cd ~/Desktop/GithubProjects/my-mechanical-keyboard-journey/zmk-config
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -13,7 +13,7 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +59 config/cradio.keymap
+badd +1 config/cradio.keymap
 badd +74 config/german-keymap.h
 badd +19 build.yaml
 argglobal
