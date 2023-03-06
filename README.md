@@ -7,7 +7,7 @@
 - install west
 
 ```bash
-pacman -S python west
+pacman -S python-west
 ```
 
 - get source code
