@@ -13,15 +13,18 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +1 config/cradio.keymap
+badd +30 config/cradio.keymap
 badd +74 config/german-keymap.h
 badd +19 build.yaml
+badd +9 config/west.yml
+badd +8 config/cradio.conf
+badd +30 README.md
 argglobal
 %argdel
 $argadd config/cradio.keymap
-edit config/cradio.keymap
+edit config/cradio.conf
 argglobal
-balt config/german-keymap.h
+balt README.md
 setlocal fdm=indent
 setlocal fde=nvim_treesitter#foldexpr()
 setlocal fmr={{{,}}}
@@ -30,30 +33,6 @@ setlocal fdl=5
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-24
-normal! zo
-38
-normal! zo
-47
-normal! zo
-55
-normal! zo
-68
-normal! zo
-68
-normal! zo
-68
-normal! zo
-68
-normal! zo
-68
-normal! zo
-68
-normal! zo
-68
-normal! zo
-68
-normal! zo
 let s:l = 1 - ((0 * winheight(0) + 25) / 50)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
