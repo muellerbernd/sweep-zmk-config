@@ -120,7 +120,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬────────────┬────────────┬────────────┬──────────╮
         //│ RESET    │          │          │          │PROFILE 0 │   │          │            │            │            │  RESET   │
-           &reset     &trans     &trans     &trans    &bt BT_SEL 0    &kp K_APP  &kp C_PREV   &kp C_VOL_UP &kp C_NEXT   &kp C_PP
+           &trans     &trans     &trans     &trans    &bt BT_SEL 0    &kp K_APP  &kp C_PREV   &kp C_VOL_UP &kp C_NEXT   &kp C_PP
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼────────────┼────────────┼────────────┼──────────┤
         //│BOOTLOADER│          │          │          │PROFILE 1 │   │          │            │            │            │BOOTLOADER│
           &bootloader &trans     &trans     &trans    &bt BT_SEL 1    &trans     &kp C_BRI_DN &kp C_VOL_DN &kp C_BRI_UP &kp C_MUTE

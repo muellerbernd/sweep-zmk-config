@@ -15,12 +15,12 @@ else
 endif
 badd +87 config/cradio.keymap
 badd +9 config/west.yml
-badd +6 config/cradio.conf
+badd +28 config/cradio.conf
 badd +37 README.md
 argglobal
 %argdel
 $argadd config/cradio.keymap
-edit config/cradio.conf
+edit config/cradio.keymap
 argglobal
 balt config/west.yml
 setlocal fdm=indent
