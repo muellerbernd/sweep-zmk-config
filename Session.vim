@@ -13,18 +13,16 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +30 config/cradio.keymap
-badd +74 config/german-keymap.h
-badd +19 build.yaml
+badd +87 config/cradio.keymap
 badd +9 config/west.yml
-badd +8 config/cradio.conf
-badd +30 README.md
+badd +6 config/cradio.conf
+badd +37 README.md
 argglobal
 %argdel
 $argadd config/cradio.keymap
 edit config/cradio.conf
 argglobal
-balt README.md
+balt config/west.yml
 setlocal fdm=indent
 setlocal fde=nvim_treesitter#foldexpr()
 setlocal fmr={{{,}}}
@@ -52,6 +50,7 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
+nohlsearch
 let g:this_session = v:this_session
 let g:this_obsession = v:this_session
 doautoall SessionLoadPost
