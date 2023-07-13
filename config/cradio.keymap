@@ -8,7 +8,7 @@
 #define HOST_OS 1  // set to 1 for Linux, default is 0 (Windows)
 #include "../helpers/keymap-helpers.h"
 
-// #include "mouse.dtsi"
+// #include <dt-bindings/zmk/mouse.h>
 
 // Home row mods macro
 #define HRML(k1,k2,k3,k4) &ht LGUI k1  &ht LALT k2  &ht LCTRL k3  &ht LSHFT k4
