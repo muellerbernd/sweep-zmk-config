@@ -13,16 +13,15 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +87 config/cradio.keymap
-badd +9 config/west.yml
-badd +28 config/cradio.conf
-badd +37 README.md
+badd +40 config/cradio.keymap
+badd +13 config/cradio.conf
+badd +30 README.md
 argglobal
 %argdel
 $argadd config/cradio.keymap
-edit config/cradio.keymap
+edit config/cradio.conf
 argglobal
-balt config/west.yml
+balt config/cradio.keymap
 setlocal fdm=indent
 setlocal fde=nvim_treesitter#foldexpr()
 setlocal fmr={{{,}}}
@@ -31,11 +30,11 @@ setlocal fdl=5
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 1 - ((0 * winheight(0) + 25) / 50)
+let s:l = 30 - ((29 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
+keepjumps 30
 normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
