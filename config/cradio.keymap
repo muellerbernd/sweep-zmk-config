@@ -126,7 +126,7 @@
           &bootloader &trans       &trans       &trans       &trans        &trans     &kp C_BRI_DN &kp C_VOL_DN &kp C_BRI_UP &kp C_MUTE
         //├──────────┼──────────┼──────────┼──────────┼──────────┤        ├──────────┼────────────┼────────────┼────────────┼──────────┤
         //│          │          │          │          │          │        │          │            │            │            │          │
-           &kp CAPS   &trans       &trans       &bt BT_CLR   &trans        &bt BT_NXT &bt BT_PRV   &trans       &trans       &kp CAPS
+           &kp CAPS   &bt BT_CLR   &bt BT_NXT   &bt BT_PRV   &trans        &trans     &trans       &trans       &trans       &kp CAPS
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤        ├──────────┼────────────┼────────────┴────────────┴──────────╯
                                                 &trans       &trans        &trans     &trans
         //                                 ╰──────────┴──────────╯        ╰──────────┴──────────╯
