@@ -18,7 +18,7 @@ logger = logging.getLogger(__name__)
 
 # config. Comment out 'flash' to skip copying to USB
 PATHS = {
-    "zmk": "../zmk",
+    "zmk": "../zmk-config/zmk",
     "zmk_config": "../zmk-config",
     "output": "../zmk-config/firmware",
     # "flash": "/run/media/bernd/NICENANO/",
