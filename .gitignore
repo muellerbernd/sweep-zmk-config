@@ -1,1 +1,8 @@
 firmware/
+.direnv
+.west/
+build/
+modules/
+scripts/
+zephyr/
+zmk/
