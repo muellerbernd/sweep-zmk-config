@@ -20,16 +20,46 @@
 #define RAISE   2
 #define ADJUST  3
 #define NAV     4
+#define TAIPO   5
 
 // custom keys
 #define TABU LC(PG_DN)
 #define TABD LC(PG_UP)
 
-// SETTINGS
+// taipo SETTINGS
 #define TAPPING_TERM 200
 #define COMBO_FAST_MS    30
 #define COMBO_SLOW_MS    80
 #define COMBO_GQT_MS     80
+
+// CONFIG
+#define COMBO_TIMEOUT 70
+#define COMBO_LAYERS 5
+#define STICKY_TIMEOUT 500
+
+// LEFT SIDE
+#define TLI 3 // TOP
+#define TLM 2 // TOP
+#define TLR 1 // TOP
+#define TLP 0 // TOP
+#define BLI 13 // BOTTOM
+#define BLM 12 // BOTTOM
+#define BLR 11 // BOTTOM
+#define BLP 10 // BOTTOM
+#define LOT 31 // O-THUMB
+#define LIT 30 // I-THUMB
+
+// RIGHT SIDE
+#define TRI 6 // TOP
+#define TRM 7 // TOP
+#define TRR 8 // TOP
+#define TRP 9 // TOP
+#define BRI 16 // BOTTOM
+#define BRM 17 // BOTTOM
+#define BRR 18 // BOTTOM
+#define BRP 19 // BOTTOM
+#define ROT 32 // O-THUMB
+#define RIT 33 // I-THUMB
 
 / {
     behaviors {
@@ -52,6 +82,19 @@
             key-positions = <12 27>;
             bindings = <&kp DE_SS>;
         };
+        // combo_adj_l {
+        //     timeout-ms = <50>;
+        //     key-positions = <22 23>;
+        //     bindings = <&mo LOWER>;
+        //     layers = <0 TAIPO>;
+        // };
+        // combo_adj_r {
+        //     timeout-ms = <50>;
+        //     key-positions = <26 27>;
+        //     bindings = <&mo RAISE>;
+        //     layers = <0 TAIPO>;
+        // };
+        #include "taipo.dtsi" // taipo combos only available in layer 5
     };
 
     conditional_layers {
@@ -128,7 +171,7 @@
         //│          │          │          │          │          │        │          │            │            │            │          │
            &kp CAPS   &bt BT_CLR   &bt BT_NXT   &bt BT_PRV   &trans        &trans     &trans       &trans       &trans       &kp CAPS
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤        ├──────────┼────────────┼────────────┴────────────┴──────────╯
-                                                &trans       &trans        &trans     &trans
+                                             &trans    &tog DEFAULT        &tog TAIPO &trans
         //                                 ╰──────────┴──────────╯        ╰──────────┴──────────╯
             >;
         };
@@ -164,6 +207,14 @@
                                              &trans     &trans         &trans       &trans
         //                                 ╰──────────┴──────────╯   ╰─────────────┴──────────╯
             >;
+        };
+        taipo_layer {
+          bindings = <
+            &none           &none            &none             &none            &none                 &none            &none            &none            &none            &none
+            &none           &none            &none             &none            &none                 &none            &none            &none            &none            &none
+            &none           &none            &none             &none            &none                 &none            &none            &none            &none            &none
+                                                               &none            &none                 &none            &none
+          >;
         };
     };
 };
