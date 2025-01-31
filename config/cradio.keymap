@@ -5,10 +5,16 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+
 #define HOST_OS 1  // set to 1 for Linux, default is 0 (Windows)
 #include "../helpers/keymap-helpers.h"
 
-#include "mouse.h"
+/*#include "mouse.dtsi"*/
+
+#include <dt-bindings/zmk/pointing.h>
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1500  // 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // 10
 
 // Home row mods macro
 #define HRML(k1,k2,k3,k4) &ht LGUI k1  &ht LALT k2  &ht LCTRL k3  &ht LSHFT k4
@@ -171,43 +177,37 @@
         //│          │          │          │          │          │        │          │            │            │            │          │
            &kp CAPS   &bt BT_CLR   &bt BT_NXT   &bt BT_PRV   &trans        &trans     &trans       &trans       &trans       &kp CAPS
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤        ├──────────┼────────────┼────────────┴────────────┴──────────╯
-                                             &trans    &tog DEFAULT        &tog TAIPO &trans
+                                             &tog TAIPO    &tog DEFAULT    &bootloader &trans
         //                                 ╰──────────┴──────────╯        ╰──────────┴──────────╯
             >;
         };
 
-        nav {
-            bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭─────────────┬──────────┬──────────┬──────────┬─────────────╮
-        //│ RESET    │          │          │          │PROFILE 0 │   │             │          │          │          │  RESET      │
-           &kp ESC    &mkp RCLK  &kp U_MS_U &kp U_BTN1 &kp U_WH_U     &kp TABD      &kp PG_UP  &kp UP     &kp PG_DN  &kp TABU
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├─────────────┼──────────┼──────────┼──────────┼─────────────┤
-        //│BOOTLOADER│          │          │          │PROFILE 1 │   │             │          │          │          │   BOOTLOADER│
-           &kp TAB    &kp U_MS_L &kp U_MS_D &kp U_MS_R &kp U_WH_U     &kp HOME      &kp LEFT   &kp DOWN   &kp RIGHT  &kp END
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├─────────────┼──────────┼──────────┼──────────┼─────────────┤
-        //│          │          │          │ CLEAR BT │PROFILE 2 │   │             │          │          │          │             │
-          &kp LS(TAB) &kp U_BTN2 &kp U_BTN3 &kp U_BTN1 &trans         &trans        &trans     &trans     &trans     &trans
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├─────────────┼──────────┼──────────┴──────────┴─────────────╯
-                                             &trans     &trans         &trans       &trans
-        //                                 ╰──────────┴──────────╯   ╰─────────────┴──────────╯
-            >;
-        };
         /*nav {*/
         /*    bindings = <*/
         /*//╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭─────────────┬──────────┬──────────┬──────────┬─────────────╮*/
-        /*//│ RESET    │          │          │          │PROFILE 0 │   │             │          │          │          │  RESET      │*/
-        /*   &kp ESC    &trans     &trans     &trans     &trans         &kp TABD      &kp PG_UP  &kp UP     &kp PG_DN  &kp TABU*/
+        /*   &kp ESC    &mkp RCLK      U_MS_U     U_BTN1     U_WH_U     &kp TABD      &kp PG_UP  &kp UP     &kp PG_DN  &kp TABU*/
         /*//├──────────┼──────────┼──────────┼──────────┼──────────┤   ├─────────────┼──────────┼──────────┼──────────┼─────────────┤*/
-        /*//│BOOTLOADER│          │          │          │PROFILE 1 │   │             │          │          │          │   BOOTLOADER│*/
-        /*   &kp TAB    &trans     &trans     &trans     &trans         &kp HOME      &kp LEFT   &kp DOWN   &kp RIGHT  &kp END*/
+        /*   &kp TAB        U_MS_L     U_MS_D     U_MS_R     U_WH_U     &kp HOME      &kp LEFT   &kp DOWN   &kp RIGHT  &kp END*/
         /*//├──────────┼──────────┼──────────┼──────────┼──────────┤   ├─────────────┼──────────┼──────────┼──────────┼─────────────┤*/
-        /*//│          │          │          │ CLEAR BT │PROFILE 2 │   │             │          │          │          │             │*/
-        /*  &kp LS(TAB) &trans     &trans     &trans     &trans         &trans        &trans     &trans     &trans     &trans*/
+        /*  &kp LS(TAB)     U_BTN2     U_BTN3     U_BTN1 &trans         &trans        &trans     &trans     &trans     &trans*/
         /*//╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├─────────────┼──────────┼──────────┴──────────┴─────────────╯*/
         /*                                     &trans     &trans         &trans       &trans*/
         /*//                                 ╰──────────┴──────────╯   ╰─────────────┴──────────╯*/
         /*    >;*/
         /*};*/
+        nav {
+            bindings = <
+        //╭──────────┬──────────    ┬─────────      ┬──────────┬        ──────────╮   ╭─────────────┬──────────┬──────────┬──────────┬─────────────╮
+           &kp ESC    &mkp RCLK      &mmv MOVE_UP    &mkp LCLK       &msc SCRL_UP      &kp TABD      &kp PG_UP  &kp UP     &kp PG_DN  &kp TABU
+        //├──────────┼──────────    ┼──────────     ┼──────────     ┼──────────┤      ├─────────────┼──────────┼──────────┼──────────┼─────────────┤
+           &kp TAB    &mmv MOVE_LEFT &mmv MOVE_DOWN  &mmv MOVE_RIGHT &msc SCRL_DOWN    &kp HOME      &kp LEFT   &kp DOWN   &kp RIGHT  &kp END
+        //├──────────┼─────────    ─┼─────────     ─┼  ───────     ─┼──────────┤      ├─────────────┼──────────┼──────────┼──────────┼─────────────┤
+          &kp LS(TAB) &mkp RCLK      &trans          &mkp LCLK       &trans            &trans        &trans     &trans     &trans     &trans
+        //╰──────────┴─────────    ─┴─────────     ─┼  ─────────   ─┼──────────┤      ├─────────────┼──────────┼──────────┴──────────┴─────────────╯
+                                                     &trans          &trans            &trans       &trans
+        //                                          ╰─────────     ─┴──────────╯      ╰─────────────┴──────────╯
+            >;
+        };
         taipo_layer {
           bindings = <
             &none           &none            &none             &none            &none                 &none            &none            &none            &none            &none
