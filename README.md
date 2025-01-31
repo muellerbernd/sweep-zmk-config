@@ -52,9 +52,3 @@ python zmk_local_build.py
 
 - [taipo website](https://inkeys.wiki/en/keymaps/taipo)
 - [zmk taipo](https://github.com/dlip/zmk-taipo/tree/main)
-
-# use mouse (info)
-
-- https://github.com/manna-harbour/miryoku_zmk/blob/b0fd7042e2c3a4c42ee5c4ea1a6c78b72ba0a196/miryoku/miryoku_kludge_mousekeyspr.h
-- https://github.com/ftc/zmk/tree/mouse-ftc
-- https://github.com/manna-harbour/miryoku_zmk/tree/master#mouse-keys
