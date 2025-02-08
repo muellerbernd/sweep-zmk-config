@@ -67,16 +67,18 @@
 #define ROT 32 // O-THUMB
 #define RIT 33 // I-THUMB
 
+&lt { quick_tap_ms = <200>; };
+
 / {
     behaviors {
         ht: hold_tap {
-            label = "hold_tap";
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <220>;
-            quick-tap-ms = <150>;
-            global-quick-tap;
+            /*flavor = "tap-preferred";*/
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            /*global-quick-tap;*/
             bindings = <&kp>, <&kp>;
         };
     };
